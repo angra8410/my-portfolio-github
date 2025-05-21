@@ -545,8 +545,6 @@ main { overflow-x: hidden; }
   position: relative;
   z-index: 1;
   animation: scaleUp 0.5s ease forwards;
-  /* Remove background color to prevent dark overlay */
-  background: none;
 }
 
 @keyframes scaleUp {
@@ -566,8 +564,6 @@ main { overflow-x: hidden; }
   object-fit: cover;
   object-position: center;
   transition: var(--transition-1);
-  /* Remove background-color to prevent dark overlay */
-  background: none;
 }
 
 .hero-banner:hover img {
@@ -582,28 +578,64 @@ main { overflow-x: hidden; }
 }
 
 .hero-title {
+  position: relative;
   text-align: center;
   margin-bottom: 30px;
   color: var(--color-primary);
   font-family: var(--ff-poppins);
   font-size: var(--fs-2);
+  font-weight: var(--fw-700);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero .btn-primary { 
   margin-inline: auto;
   display: block;
+  animation: fadeInUp 0.5s ease forwards 0.2s;
+  opacity: 0;
 }
 
 /* Media queries for responsiveness */
 @media (min-width: 768px) {
   .hero-banner {
     max-width: 350px;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    margin-top: 30px;
+  }
+
+  .hero-title {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .hero .btn-primary {
+    margin-inline: 0;
   }
 }
 
 @media (min-width: 992px) {
   .hero-banner {
     max-width: 400px;
+  }
+  
+  .hero-title {
+    font-size: calc(var(--fs-2) * 1.2);
   }
 }
 
