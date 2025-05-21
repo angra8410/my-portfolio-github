@@ -533,7 +533,7 @@ main { overflow-x: hidden; }
 }
 
 .hero-banner {
-  max-width: 200px;
+  max-width: 300px;
   width: 100%;
   margin-inline: auto;
   margin-top: 90px;
@@ -542,10 +542,11 @@ main { overflow-x: hidden; }
   overflow: hidden;
   aspect-ratio: 1;
   box-shadow: var(--shadow-1);
-  background: var(--bg-secondary);
   position: relative;
   z-index: 1;
   animation: scaleUp 0.5s ease forwards;
+  /* Remove background color to prevent dark overlay */
+  background: none;
 }
 
 @keyframes scaleUp {
@@ -565,7 +566,8 @@ main { overflow-x: hidden; }
   object-fit: cover;
   object-position: center;
   transition: var(--transition-1);
-  background-color: var(--bg-secondary);
+  /* Remove background-color to prevent dark overlay */
+  background: none;
 }
 
 .hero-banner:hover img {
@@ -592,42 +594,16 @@ main { overflow-x: hidden; }
   display: block;
 }
 
-.scroll-down {
-  display: block !important;
-  position: absolute;
-  right: 2rem;
-  bottom: 2rem;
-  color: var(--color-secondary);
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  transition: var(--transition-1);
-}
-
-.scroll-down:hover {
-  color: var(--raw-seinna);
-}
-
-@media (max-width: 600px) {
-  .scroll-down {
-    right: 1rem;
-    bottom: 1rem;
-    font-size: 1rem;
-  }
-}
-
+/* Media queries for responsiveness */
 @media (min-width: 768px) {
   .hero-banner {
-    margin-top: 60px;
-    max-width: 300px;
+    max-width: 350px;
   }
+}
 
-  .hero-content {
-    margin-top: 30px;
+@media (min-width: 992px) {
+  .hero-banner {
+    max-width: 400px;
   }
 }
 
