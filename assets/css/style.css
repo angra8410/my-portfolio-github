@@ -521,12 +521,12 @@ body.active { overflow: hidden; }
 
 .hero {
   padding-block: var(--section-padding);
-  position: relative;
   min-height: 100vh;
   display: grid;
   place-items: center;
   text-align: center;
-  background: var(--bg-primary);
+  /* Remove background color from here */
+  position: relative;
 }
 
 .hero-banner {
@@ -538,8 +538,10 @@ body.active { overflow: hidden; }
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1;
-  box-shadow: var(--shadow-1);
-  background: transparent;
+  /* Lighter shadow for better visibility */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* Important: ensure content is visible */
+  isolation: isolate;
   z-index: 1;
 }
 
@@ -549,11 +551,25 @@ body.active { overflow: hidden; }
   object-fit: cover;
   object-position: center;
   transition: var(--transition-1);
-  background: transparent;
+  /* Remove background */
+  background: none;
+  /* Ensure image is visible */
+  z-index: 2;
+  position: relative;
 }
 
 .hero-banner:hover img {
   transform: scale(1.05);
+}
+
+/* Add a light background to the banner in light theme */
+.light_theme .hero-banner {
+  background: var(--bg-secondary);
+}
+
+/* Add a subtle border in dark theme */
+.dark_theme .hero-banner {
+  border: 2px solid var(--bg-secondary);
 }
 
 .hero-content {
@@ -563,26 +579,7 @@ body.active { overflow: hidden; }
   margin-inline: auto;
 }
 
-.hero-title {
-  color: var(--color-primary);
-  font-size: var(--fs-2);
-  font-weight: var(--fw-700);
-  margin-bottom: 30px;
-  animation: fadeInUp 0.5s ease forwards;
-  opacity: 0;
-}
-
-/* Remove any background color from the body */
-body {
-  background: var(--bg-primary);
-  color: var(--color-primary);
-  transition: var(--transition-1);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
+/* Delete or comment out any duplicate body background definitions */
 
 
 
