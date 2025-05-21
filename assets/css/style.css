@@ -541,10 +541,22 @@ main { overflow-x: hidden; }
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1;
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
-  background: none;
+  box-shadow: var(--shadow-1);
+  background: var(--bg-secondary);
   position: relative;
   z-index: 1;
+  animation: scaleUp 0.5s ease forwards;
+}
+
+@keyframes scaleUp {
+  from { 
+    transform: scale(0.9); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
 }
 
 .hero-banner img {
@@ -552,7 +564,8 @@ main { overflow-x: hidden; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.3s ease;
+  transition: var(--transition-1);
+  background-color: var(--bg-secondary);
 }
 
 .hero-banner:hover img {
@@ -561,16 +574,24 @@ main { overflow-x: hidden; }
 
 :is(.hero-social-list, .scroll-down) { display: none; }
 
-.hero-content { max-width: 450px; }
+.hero-content { 
+  max-width: 450px;
+  margin-inline: auto;
+}
 
 .hero-title {
   text-align: center;
   margin-bottom: 30px;
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-2);
 }
 
-.hero .btn-primary { margin-inline: auto; }
+.hero .btn-primary { 
+  margin-inline: auto;
+  display: block;
+}
 
-/* Mostrar el botón scroll en todas las secciones principales */
 .scroll-down {
   display: block !important;
   position: absolute;
@@ -584,14 +605,29 @@ main { overflow-x: hidden; }
   border: none;
   cursor: pointer;
   z-index: 2;
+  transition: var(--transition-1);
 }
 
-/* Ajuste para que el scroll-down no tape contenido en mobile */
+.scroll-down:hover {
+  color: var(--raw-seinna);
+}
+
 @media (max-width: 600px) {
   .scroll-down {
     right: 1rem;
     bottom: 1rem;
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-banner {
+    margin-top: 60px;
+    max-width: 300px;
+  }
+
+  .hero-content {
+    margin-top: 30px;
   }
 }
 
