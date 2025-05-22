@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my work as a Data Analyst. Built with HTML, CSS, and JavaScript.
 
-🔗 [View Live Portfolio](https://angra8410.github.io/MyPortfolio/)
+🔗 [View Live Portfolio](https://angra8410.github.io/my-portfolio-github/)
 
 ## Preview
 
