@@ -6,7 +6,7 @@ A modern, responsive portfolio website showcasing my work as a Data Analyst. Bui
 
 ## Preview
 
-![Portfolio Preview](./assets/images/my-portfolio.png)
+![Portfolio Preview](./assets/images/my-portfolio.png.png)
 
 > A snapshot of my portfolio website showcasing the main sections and responsive design.
 
